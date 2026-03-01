@@ -3,7 +3,15 @@ import './globals.css';
 
 export const metadata: Metadata = {
   title: 'MapinSKHU',
-  description: '성공회대학교 지도 서비스',
+  description: '회대인들을 위한 가장 빠르고 간편한 지도',
+  openGraph: {
+    title: 'MapinSKHU',
+    description: '회대인들을 위한 가장 빠르고 간편한 지도',
+    url: 'https://mapinskhu.com',
+    siteName: 'MapinSKHU',
+    locale: 'ko_KR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
@@ -13,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body>{children}</body>
+      <body className="fixed h-screen w-screen overflow-hidden bg-[#e6fdff]">{children}</body>
     </html>
   );
 }

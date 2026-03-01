@@ -74,6 +74,10 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
+  /* MapinSKHU 커스텀 색상 */
+  --new-main-color: #218b21;
+  --new-sub-color: #bae688;
 }
 
 .dark {
@@ -111,10 +115,118 @@
 }
 
 @layer base {
+  /* 순천체 폰트 */
+  @font-face {
+    font-family: "SuncheonB";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonB.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "SuncheonR";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/SuncheonR.woff")
+      format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* Noto Sans KR - Google Fonts */
+  @font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 100;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyeLTq8H4hfeE.woff2)
+      format("woff2");
+  }
+
+  @font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 300;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyelTq8H4hfeE.woff2)
+      format("woff2");
+  }
+
+  @font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyeLTq8H4hfeE.woff2)
+      format("woff2");
+  }
+
+  @font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 500;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyegjq8H4hfeE.woff2)
+      format("woff2");
+  }
+
+  @font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 700;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyeqvq8H4hfeE.woff2)
+      format("woff2");
+  }
+
+  @font-face {
+    font-family: "Noto Sans KR";
+    font-style: normal;
+    font-weight: 900;
+    src: url(https://fonts.gstatic.com/s/notosanskr/v36/PbyxFmXiEBPT4ITbgNA5Cgms3VYcOA-vvnIzzuoyeszq8H4hfeE.woff2)
+      format("woff2");
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
+
+  html {
+    font-size: 62.5%;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    font-family: "Noto Sans KR", sans-serif;
+    line-height: 1;
+    user-select: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  input,
+  textarea,
+  select {
+    font-family: "Noto Sans KR", sans-serif;
+  }
+
+  a {
+    font-size: 2rem;
+    text-decoration: none;
+  }
+
+  ol,
+  ul {
+    list-style: none;
+  }
+}
+
+/* 애니메이션 */
+@keyframes motion {
+  0% {
+    margin-top: 0px;
+  }
+  100% {
+    margin-top: 10px;
   }
 }
