@@ -4,6 +4,7 @@ export const buildings: Building[] = [
   {
     id: 1,
     name: "승연관",
+    slug: "sy_gwan",
     icon: "/images/icons/1.png",
     image: "/images/main/sy_gwan_alone.png",
     link: "/sy_gwan",
@@ -16,6 +17,7 @@ export const buildings: Building[] = [
   {
     id: 2,
     name: "일만관",
+    slug: "im_gwan",
     icon: "/images/icons/2.png",
     image: "/images/main/im_gwan_alone.png",
     link: "/im_gwan",
@@ -28,6 +30,7 @@ export const buildings: Building[] = [
   {
     id: 3,
     name: "월당관",
+    slug: "wd_gwan",
     icon: "/images/icons/3.png",
     image: "/images/main/wd_gwan_alone.png",
     link: "/wd_gwan",
@@ -40,6 +43,7 @@ export const buildings: Building[] = [
   {
     id: 5,
     name: "나눔관",
+    slug: "nn_gwan",
     icon: "/images/icons/5.png",
     image: "/images/main/nn_gwan_alone.png",
     link: "/nn_gwan",
@@ -52,6 +56,7 @@ export const buildings: Building[] = [
   {
     id: 6,
     name: "정보과학관",
+    slug: "jg_gwan",
     icon: "/images/icons/6.png",
     image: "/images/main/jg_gwan_alone.png",
     link: "/jg_gwan",
@@ -64,6 +69,7 @@ export const buildings: Building[] = [
   {
     id: 7,
     name: "새천년관",
+    slug: "scn_gwan",
     icon: "/images/icons/7.png",
     image: "/images/main/scn_gwan_alone.png",
     link: "/scn_gwan",
@@ -76,6 +82,7 @@ export const buildings: Building[] = [
   {
     id: 8,
     name: "중앙도서관",
+    slug: "library",
     icon: "/images/icons/8.png",
     image: "/images/main/library_alone.png",
     link: "https://library.skhu.ac.kr/",
@@ -88,6 +95,7 @@ export const buildings: Building[] = [
   {
     id: 9,
     name: "성미가엘성당/피츠버그홀",
+    slug: "pb_hall",
     icon: "/images/icons/9.png",
     image: "/images/main/pb_hall_alone.png",
     link: "/pb_hall",
@@ -100,6 +108,7 @@ export const buildings: Building[] = [
   {
     id: 11,
     name: "미가엘관",
+    slug: "mgell_gwan",
     icon: "/images/icons/11.png",
     image: "/images/main/mgell_gwan_alone.png",
     link: "/mgell_gwan",
@@ -110,3 +119,7 @@ export const buildings: Building[] = [
     },
   },
 ];
+
+export function getBuildingBySlug(slug: string) {
+  return buildings.find((b) => b.slug === slug);
+}

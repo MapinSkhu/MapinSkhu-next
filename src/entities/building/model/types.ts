@@ -1,6 +1,7 @@
 export interface Building {
   id: number;
   name: string;
+  slug: string;
   icon: string;
   image: string;
   link: string;
@@ -10,3 +11,4 @@ export interface Building {
     mobile: { top: string; left?: string; right?: string };
   };
 }
+

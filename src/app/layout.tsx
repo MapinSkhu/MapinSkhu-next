@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="fixed h-screen w-screen overflow-hidden bg-[#e6fdff]">{children}</body>
+      <body className="bg-[#e6fdff]">{children}</body>
     </html>
   );
 }

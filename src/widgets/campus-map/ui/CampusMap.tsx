@@ -43,7 +43,7 @@ export default function CampusMap() {
   }
 
   return (
-    <>
+    <div className="fixed inset-0 overflow-hidden">
       <Header />
 
       {/* 배경 이미지 */}
@@ -79,6 +79,6 @@ export default function CampusMap() {
       {selectedBuilding && (
         <BuildingModal building={selectedBuilding} onClose={handleCloseModal} />
       )}
-    </>
+    </div>
   );
 }
