@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Building } from "@/entities/building/model/types";
+import { getRoomImage } from "@/entities/classroom/lib/data";
 import { Lecture } from "../model/types";
 
 interface RoomHeroProps {
@@ -13,13 +14,15 @@ export default function RoomHero({
   roomId,
   currentLecture,
 }: RoomHeroProps) {
+  const heroImage = getRoomImage(roomId) ?? building.image;
+
   return (
     <section className="relative w-full">
-      {/* 건물 배경 이미지 */}
+      {/* 강의실 or 건물 배경 이미지 */}
       <div className="relative h-[240px] w-full overflow-hidden md:h-[320px]">
         <Image
-          src={building.image}
-          alt={building.name}
+          src={heroImage}
+          alt={`${building.name} ${roomId}호`}
           fill
           className="object-cover object-center"
           priority
