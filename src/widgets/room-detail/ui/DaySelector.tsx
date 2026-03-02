@@ -21,8 +21,8 @@ export default function DaySelector({
           className={cn(
             "flex h-[35px] w-[35px] items-center justify-center rounded-full text-[14px] transition-colors",
             selectedDay === index
-              ? "border border-[#abe99f] bg-[#e5ffe0] font-bold text-[#35aa69]"
-              : "border border-[#d1d1d6] font-medium text-[#878891]",
+              ? "border border-(--mapin-green-400) bg-(--mapin-green-100) font-bold text-(--mapin-green-800)"
+              : "border border-[#d1d1d6] font-medium text-(--mapin-gray-800)",
           )}
           aria-pressed={selectedDay === index}
         >

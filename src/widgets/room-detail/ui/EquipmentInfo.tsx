@@ -15,10 +15,10 @@ export default function EquipmentInfo({ equipment }: EquipmentInfoProps) {
     <section className="border-t border-gray-100 px-4 py-6 md:px-6">
       {/* 섹션 헤더 */}
       <div className="mb-4 flex flex-col gap-1">
-        <h2 className="text-[1.6rem] font-bold text-[#454549]">
+        <h2 className="text-[1.6rem] font-bold text-(--mapin-gray-900)">
           강의실 기자재 정보
         </h2>
-        <p className="flex items-center gap-1 text-[1.1rem] text-[#95969d]">
+        <p className="flex items-center gap-1 text-[1.1rem] text-(--mapin-gray-700)">
           <TriangleAlert size={13} />
           학기 도중 변동될 수 있습니다
         </p>
@@ -33,11 +33,11 @@ export default function EquipmentInfo({ equipment }: EquipmentInfoProps) {
             className="shrink-0 text-(--new-main-color)"
           />
           <div>
-            <p className="text-[1.3rem] font-semibold text-[#454549]">
+            <p className="text-[1.3rem] font-semibold text-(--mapin-gray-900)">
               좌석 {equipment.seats}개
             </p>
             {equipment.seatNote && (
-              <p className="text-[1.1rem] text-[#95969d]">
+              <p className="text-[1.1rem] text-(--mapin-gray-700)">
                 {equipment.seatNote}
               </p>
             )}
@@ -51,11 +51,11 @@ export default function EquipmentInfo({ equipment }: EquipmentInfoProps) {
             className="shrink-0 text-(--new-main-color)"
           />
           <div>
-            <p className="text-[1.3rem] font-semibold text-[#454549]">
+            <p className="text-[1.3rem] font-semibold text-(--mapin-gray-900)">
               콘센트 {equipment.outlets}개
             </p>
             {equipment.outletNote && (
-              <p className="text-[1.1rem] text-[#95969d]">
+              <p className="text-[1.1rem] text-(--mapin-gray-700)">
                 {equipment.outletNote}
               </p>
             )}
@@ -65,7 +65,7 @@ export default function EquipmentInfo({ equipment }: EquipmentInfoProps) {
 
       {/* 피드백 */}
       <div className="flex flex-col items-center gap-3 text-center">
-        <p className="text-[1.2rem] text-[#95969d]">
+        <p className="text-[1.2rem] text-(--mapin-gray-700)">
           이 정보가 도움이 되셨나요?
         </p>
         <button

@@ -34,28 +34,28 @@ interface LectureCardProps {
 
 function LectureCard({ lecture, compact = false }: LectureCardProps) {
   return (
-    <div className="h-full overflow-hidden rounded-[10px] border border-[#d5d8ef] bg-[#e8ecff] px-[15px] py-[12px]">
+    <div className="h-full overflow-hidden rounded-[10px] border border-(--mapin-navy-400) bg-(--mapin-navy-200) px-[15px] py-[12px]">
       {!compact && (
         <div className="flex flex-col gap-[6px]">
-          <p className="text-[16px] font-extrabold leading-tight text-[#454d7b]">
+          <p className="text-[16px] font-extrabold leading-tight text-(--mapin-navy-800)">
             {lecture.startTime}~{lecture.endTime}
           </p>
-          <p className="text-[14px] font-bold leading-tight text-[#6870a0]">
+          <p className="text-[14px] font-bold leading-tight text-(--mapin-navy-750)">
             {lecture.name}
           </p>
         </div>
       )}
       {compact && (
         <div className="flex flex-col gap-[6px]">
-          <p className="text-[16px] font-extrabold leading-tight text-[#454d7b]">
+          <p className="text-[16px] font-extrabold leading-tight text-(--mapin-navy-800)">
             {lecture.startTime}~{lecture.endTime}
           </p>
-          <p className="line-clamp-2 text-[14px] font-bold leading-tight text-[#6870a0]">
+          <p className="line-clamp-2 text-[14px] font-bold leading-tight text-(--mapin-navy-750)">
             {lecture.name}
           </p>
         </div>
       )}
-      <p className="mt-[20px] text-[12px] font-medium text-[#7982b6]">
+      <p className="mt-[20px] text-[12px] font-medium text-(--mapin-navy-700)">
         {lecture.professor}
       </p>
     </div>
@@ -116,8 +116,8 @@ export default function Timetable({
                     className={cn(
                       "flex h-[32px] w-[90px] items-center justify-center rounded-full text-[16px] font-bold transition-colors",
                       selectedDay === index
-                        ? "border border-[#abe99f] bg-[#e5ffe0] text-[#35aa69]"
-                        : "text-[#95969d] hover:text-[#35aa69]",
+                        ? "border border-(--mapin-green-400) bg-(--mapin-green-100) text-(--mapin-green-800)"
+                        : "text-(--mapin-gray-700) hover:text-(--mapin-green-800)",
                     )}
                     aria-pressed={selectedDay === index}
                   >
@@ -138,7 +138,7 @@ export default function Timetable({
                     style={{ height: `${SLOT_HEIGHT_PX}px` }}
                   >
                     {i % 2 === 0 && (
-                      <span className="text-[12px] text-[#95969d]">{slot}</span>
+                      <span className="text-[12px] text-(--mapin-gray-700)">{slot}</span>
                     )}
                   </div>
                 ))}
@@ -219,7 +219,7 @@ export default function Timetable({
                 }}
               >
                 {i % 2 === 0 && (
-                  <span className="w-full text-right text-[12px] text-[#95969d]">
+                  <span className="w-full text-right text-[12px] text-(--mapin-gray-700)">
                     {slot}
                   </span>
                 )}
@@ -271,7 +271,7 @@ export default function Timetable({
                 className="absolute flex items-center justify-center"
                 style={{ left: "70px", right: 0, top: 0, bottom: 0 }}
               >
-                <p className="text-[13px] text-[#95969d]">
+                <p className="text-[13px] text-(--mapin-gray-700)">
                   이 날은 강의가 없습니다.
                 </p>
               </div>

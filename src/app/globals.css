@@ -78,6 +78,62 @@
   /* MapinSKHU 커스텀 색상 */
   --new-main-color: #218b21;
   --new-sub-color: #bae688;
+
+  /* Figma Primitive Colors - Gray */
+  --mapin-gray-100: #f7f7fa;
+  --mapin-gray-200: #f5f5f8;
+  --mapin-gray-300: #f0f0f4;
+  --mapin-gray-400: #e6e6eb;
+  --mapin-gray-450: #dadadd;
+  --mapin-gray-500: #cbccd4;
+  --mapin-gray-540: #cbccd466;
+  --mapin-gray-600: #b2b3bc;
+  --mapin-gray-700: #95969d;
+  --mapin-gray-800: #878891;
+  --mapin-gray-850: #63646d;
+  --mapin-gray-900: #454549;
+
+  /* Figma Primitive Colors - Green */
+  --mapin-green-100: #e5ffe0;
+  --mapin-green-200: #d0f1c9;
+  --mapin-green-300: #d8fdd1;
+  --mapin-green-350: #c5f1c9;
+  --mapin-green-400: #abe99f;
+  --mapin-green-500: #a9ea89;
+  --mapin-green-600: #84dd8c;
+  --mapin-green-700: #3cb371;
+  --mapin-green-750: #60c98e;
+  --mapin-green-800: #35aa69;
+
+  /* Figma Primitive Colors - NavyBlue */
+  --mapin-navy-100: #f8f9ff;
+  --mapin-navy-200: #e8ecff;
+  --mapin-navy-300: #e0e3ef;
+  --mapin-navy-400: #d5d8ef;
+  --mapin-navy-500: #b1b9d2;
+  --mapin-navy-600: #adb1c9;
+  --mapin-navy-700: #7982b6;
+  --mapin-navy-750: #6870a0;
+  --mapin-navy-800: #454d7b;
+  --mapin-navy-900: #4d5272;
+
+  /* Figma Primitive Colors - Red */
+  --mapin-red-100: #ffe9eb;
+  --mapin-red-200: #ffdade;
+  --mapin-red-900: #ff5b6b;
+
+  /* Figma Primitive Colors - SkyBlue */
+  --mapin-skyblue-300: #e6fdff;
+
+  /* Figma Primitive Colors - White */
+  --mapin-white-900: #ffffff;
+  --mapin-white-910: #ffffff1a;
+  --mapin-white-950: #ffffff80;
+  --mapin-white-970: #ffffffb2;
+  --mapin-white-980: #ffffffcc;
+
+  /* Figma Primitive Colors - Yellow */
+  --mapin-yellow-100: #eeffbc;
 }
 
 .dark {
@@ -229,4 +285,126 @@
   100% {
     margin-top: 10px;
   }
+}
+
+/* ===== Typography Utilities ===== */
+
+@utility typo-heading-5xl {
+  font-size: 70px;
+  font-weight: 800;
+  line-height: 68px;
+}
+
+@utility typo-heading-4xl {
+  font-size: 60px;
+  font-weight: 800;
+  line-height: 68px;
+}
+
+@utility typo-heading-lg {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+@utility typo-heading-sm-bd {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+@utility typo-heading-sm-smbd {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+@utility typo-heading-sm-md {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@utility typo-body-lg-exbd {
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 32px;
+}
+
+@utility typo-body-lg-bd {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 32px;
+}
+
+@utility typo-body-lg-smbd {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 32px;
+}
+
+@utility typo-body-lg-md {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+@utility typo-body-md-bd {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+@utility typo-body-md-smbd {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+@utility typo-body-md-md-20 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@utility typo-body-md-md-16 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+@utility typo-body-sm-smbd-20 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 20px;
+}
+
+@utility typo-body-sm-smbd-16 {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+}
+
+@utility typo-body-sm-md-20 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+@utility typo-body-sm-md-16 {
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+@utility typo-body-sm-rg {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+@utility typo-body-exsm-md {
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
 }

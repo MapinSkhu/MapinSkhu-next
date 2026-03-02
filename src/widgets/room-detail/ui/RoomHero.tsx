@@ -30,30 +30,30 @@ export default function RoomHero({
 
       {/* 텍스트 오버레이 */}
       <div className="absolute inset-x-0 bottom-0 flex flex-col items-center pb-6 text-center">
-        <p className="mb-4 text-[1.3rem] font-bold text-[#454549] md:text-[1.6rem]">
+        <p className="mb-4 text-[1.3rem] font-bold text-(--mapin-gray-900) md:text-[1.6rem]">
           {building.name}
         </p>
 
-        <h1 className="text-[6rem] font-extrabold leading-none text-[#454549] md:text-[8rem]">
+        <h1 className="text-[6rem] font-extrabold leading-none text-(--mapin-gray-900) md:text-[8rem]">
           {roomId}
         </h1>
 
         {/* 현재 강의 상태 */}
         <div className="mt-3 flex flex-col items-center gap-12">
           {currentLecture ? (
-            <p className="text-[1.3rem] font-medium text-[#454549]">
+            <p className="text-[1.3rem] font-medium text-(--mapin-gray-900)">
               현재{" "}
-              <span className="rounded-[4px] border border-[#ffdade] bg-[#ffe9eb] px-[6px] py-[2px] text-[1.2rem] font-semibold text-[#ff5b6b]">
+              <span className="rounded-[4px] border border-(--mapin-red-200) bg-(--mapin-red-100) px-[6px] py-[2px] text-[1.2rem] font-semibold text-(--mapin-red-900)">
                 {currentLecture.name}
               </span>{" "}
               강의 중입니다.
             </p>
           ) : (
-            <p className="text-[1.3rem] font-medium text-[#454549]">
+            <p className="text-[1.3rem] font-medium text-(--mapin-gray-900)">
               현재 강의가 없습니다.
             </p>
           )}
-          <p className="text-[1.1rem] text-[#95969d]">
+          <p className="text-[1.1rem] text-(--mapin-gray-700)">
             ⚠ 강의 자체 휴강은 표시되지 않습니다.
           </p>
         </div>
