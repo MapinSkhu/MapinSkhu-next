@@ -6,12 +6,15 @@ import BuildingIcon from "@/entities/building/ui/BuildingIcon";
 import BuildingModal from "@/entities/building/ui/BuildingModal";
 import { buildings } from "@/entities/building/lib/data";
 import { Building } from "@/entities/building/model/types";
+import { useBreakpoint } from "@/shared/lib/useMediaQuery";
 
 export default function CampusMap() {
   const [selectedBuilding, setSelectedBuilding] = useState<Building | null>(
-    null
+    null,
   );
   const [isLoading, setIsLoading] = useState(true);
+  const breakpoint = useBreakpoint();
+  const isMobile = breakpoint === "mobile";
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -48,19 +51,19 @@ export default function CampusMap() {
 
       {/* 배경 이미지 */}
       <div className="fixed inset-0 -z-10">
-        {/* PC 배경 */}
-        <img
-          src="/images/main/P_back_new.png"
-          alt="Campus Map"
-          className="hidden h-full object-cover md:block"
-          style={{ width: "103vw" }}
-        />
-        {/* 모바일 배경 */}
-        <img
-          src="/images/main/M_back.png"
-          alt="Campus Map Mobile"
-          className="block h-full w-full object-cover md:hidden"
-        />
+        {isMobile ? (
+          <img
+            src="/images/main/M_back.png"
+            alt="Campus Map Mobile"
+            className="h-full w-full object-fill"
+          />
+        ) : (
+          <img
+            src="/images/main/P_back_new.png"
+            alt="Campus Map"
+            className="h-full w-full object-fill"
+          />
+        )}
       </div>
 
       {/* 건물 아이콘들 */}
