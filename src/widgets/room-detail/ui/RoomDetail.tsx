@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Building } from "@/entities/building/model/types";
 import {
   getClassroomByNumber,
@@ -12,7 +12,7 @@ import DaySelector from "./DaySelector";
 import Timetable from "./Timetable";
 import EquipmentInfo from "./EquipmentInfo";
 import { Lecture } from "../model/types";
-import { timeToMinutes, getDayIndex } from "../lib/time";
+import { getDayIndex, timeToMinutes } from "../lib/time";
 
 interface RoomDetailProps {
   building: Building;
@@ -41,7 +41,7 @@ function findCurrentLecture(
 }
 
 export default function RoomDetail({ building, roomId }: RoomDetailProps) {
-  const [selectedDay, setSelectedDay] = useState(() => getDayIndex(new Date()));
+  const todayIndex = getDayIndex(new Date());
   const [currentTime, setCurrentTime] = useState(() => getCurrentTime());
 
   useEffect(() => {
@@ -63,11 +63,7 @@ export default function RoomDetail({ building, roomId }: RoomDetailProps) {
   const lectures = detail?.lectures ?? [];
   const equipment = detail?.equipment ?? { pc: 0, chairs: 0, projector: 0 };
 
-  const currentLecture = findCurrentLecture(
-    lectures,
-    selectedDay,
-    currentTime,
-  );
+  const currentLecture = findCurrentLecture(lectures, todayIndex, currentTime);
 
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -88,16 +84,8 @@ export default function RoomDetail({ building, roomId }: RoomDetailProps) {
           {/* 요일 선택 + 시간표 */}
           <div className="flex flex-col gap-16">
             <section className="mt-2">
-              <DaySelector
-                selectedDay={selectedDay}
-                onDayChange={setSelectedDay}
-              />
-              <Timetable
-                lectures={lectures}
-                selectedDay={selectedDay}
-                onDayChange={setSelectedDay}
-                currentTime={currentTime}
-              />
+              <DaySelector />
+              <Timetable lectures={lectures} currentTime={currentTime} />
             </section>
 
             {/* 기자재 정보 */}

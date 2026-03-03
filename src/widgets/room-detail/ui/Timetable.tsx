@@ -108,18 +108,12 @@ function LectureCard({ lecture, variant, compact = false }: LectureCardProps) {
 
 interface TimetableProps {
   lectures: Lecture[];
-  selectedDay: number;
-  onDayChange: (day: number) => void;
   currentTime?: string; // "HH:MM"
 }
 
-export default function Timetable({
-  lectures,
-  selectedDay,
-  onDayChange,
-  currentTime,
-}: TimetableProps) {
+export default function Timetable({ lectures, currentTime }: TimetableProps) {
   const todayDayIndex = getDayIndex(new Date());
+  const selectedDay = todayDayIndex;
 
   const lecturesByDay = useMemo(() => {
     const map: Record<number, Lecture[]> = {};
@@ -156,18 +150,17 @@ export default function Timetable({
                   key={day}
                   className="flex flex-1 items-center justify-center"
                 >
-                  <button
-                    onClick={() => onDayChange(index)}
+                  <div
                     className={cn(
-                      "flex h-[32px] w-[48px] items-center justify-center rounded-full typo-body-lg-bd transition-colors",
-                      selectedDay === index
+                      "flex h-[32px] w-[48px] items-center justify-center rounded-full typo-body-lg-bd",
+                      todayDayIndex === index
                         ? "border border-(--mapin-green-400) bg-(--mapin-green-100) text-(--mapin-green-800)"
-                        : "text-(--mapin-gray-700) hover:text-(--mapin-green-800)",
+                        : "text-(--mapin-gray-700)",
                     )}
-                    aria-pressed={selectedDay === index}
+                    aria-current={todayDayIndex === index ? "date" : undefined}
                   >
                     {day}
-                  </button>
+                  </div>
                 </div>
               ))}
             </div>
