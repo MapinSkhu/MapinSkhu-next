@@ -1,6 +1,7 @@
 "use client";
 
 import { Building } from "@/entities/building/model/types";
+import { useBreakpoint } from "@/shared/lib/useMediaQuery";
 
 interface BuildingIconProps {
   building: Building;
@@ -13,58 +14,36 @@ export default function BuildingIcon({
   onClick,
   isActive,
 }: BuildingIconProps) {
-  const getPositionStyles = () => {
-    const { pc, tablet, mobile } = building.position;
+  const breakpoint = useBreakpoint();
 
-    return {
-      top: pc.top,
-      left: pc.left,
-      right: pc.right,
-      "--tablet-top": tablet.top,
-      "--tablet-left": tablet.left,
-      "--tablet-right": tablet.right,
-      "--mobile-top": mobile.top,
-      "--mobile-left": mobile.left,
-      "--mobile-right": mobile.right,
-    } as React.CSSProperties;
+  const position = building.position[breakpoint];
+
+  const positionStyle: React.CSSProperties = {
+    top: position.top,
+    left: position.left,
+    right: position.right,
   };
+
+  const isMobile = breakpoint === "mobile";
 
   return (
     <div
-      className="absolute cursor-pointer transition-opacity duration-300"
-      style={getPositionStyles()}
+      className="absolute cursor-pointer"
+      style={positionStyle}
       onClick={onClick}
     >
-      {/* PC/태블릿 */}
-      <div className="hidden md:block">
-        <img
-          src={building.icon}
-          alt={building.name}
-          className={`animate-bounce transition-opacity duration-300 md:w-[3.5vw] lg:w-[4vw] ${
-            isActive ? "opacity-100" : "opacity-100"
-          }`}
-          style={{
-            filter: "drop-shadow(0.5vw 0.5vw 0.5vw var(--new-main-color))",
-            height: "auto",
-          }}
-        />
-      </div>
-
-      {/* 모바일 */}
-      <div className="block md:hidden">
-        <img
-          src={building.icon}
-          alt={building.name}
-          className={`animate-bounce transition-opacity duration-300 ${
-            isActive ? "opacity-100" : "opacity-100"
-          }`}
-          style={{
-            filter: "drop-shadow(0.5vw 0.5vw 0.5vw var(--new-main-color))",
-            width: "7vw",
-            height: "auto",
-          }}
-        />
-      </div>
+      <img
+        src={building.icon}
+        alt={building.name}
+        className={`animate-bounce transition-opacity duration-300 ${
+          isActive ? "opacity-100" : "opacity-70"
+        }`}
+        style={{
+          filter: "drop-shadow(0.5vw 0.5vw 0.5vw var(--new-main-color))",
+          width: isMobile ? "10vw" : breakpoint === "tablet" ? "5.5vw" : "4.5vw",
+          height: "auto",
+        }}
+      />
     </div>
   );
 }
