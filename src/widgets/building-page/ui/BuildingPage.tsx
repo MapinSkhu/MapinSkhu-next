@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Building } from "@/entities/building/model/types";
 import { getClassroomsByBuilding } from "@/entities/classroom/lib/data";
+import Header from "@/widgets/header/ui/Header";
 
 interface BuildingPageProps {
   building: Building;
@@ -16,18 +17,7 @@ export default function BuildingPage({ building }: BuildingPageProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="flex items-center gap-3 border-b border-gray-200 px-4 py-3">
-        <Link
-          href="/"
-          className="flex h-[44px] w-[44px] items-center justify-center rounded-full hover:bg-gray-100"
-          aria-label="지도로 돌아가기"
-        >
-          <ArrowLeft size={20} className="text-(--new-main-color)" />
-        </Link>
-        <h1 className="text-lg font-bold text-(--new-main-color)">
-          {building.name}
-        </h1>
-      </header>
+      <Header />
 
       <main className="flex-1 p-4">
         <div className="mx-auto max-w-2xl">

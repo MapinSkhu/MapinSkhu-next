@@ -124,29 +124,27 @@ export default function Header() {
             </Link>
           </div>
 
-          {!isMainPage && (
-            <div className="flex items-center pr-4">
-              {isSearchOpen ? (
-                <button
-                  ref={closeButtonRef}
-                  onClick={toggleSearch}
-                  className="flex h-[44px] w-[44px] items-center justify-center rounded-full hover:bg-black/5"
-                  aria-label="검색 닫기"
-                >
-                  <X size={20} style={{ color: "var(--new-main-color)" }} />
-                </button>
-              ) : (
-                <button
-                  ref={searchButtonRef}
-                  onClick={toggleSearch}
-                  className="flex h-[44px] w-[44px] items-center justify-center rounded-full hover:bg-black/5"
-                  aria-label="검색"
-                >
-                  <Search size={20} style={{ color: "var(--new-main-color)" }} />
-                </button>
-              )}
-            </div>
-          )}
+          <div className="flex items-center pr-4">
+            {isSearchOpen ? (
+              <button
+                ref={closeButtonRef}
+                onClick={toggleSearch}
+                className="flex h-[44px] w-[44px] items-center justify-center rounded-full hover:bg-black/5"
+                aria-label="검색 닫기"
+              >
+                <X size={20} style={{ color: "var(--new-main-color)" }} />
+              </button>
+            ) : (
+              <button
+                ref={searchButtonRef}
+                onClick={toggleSearch}
+                className="flex h-[44px] w-[44px] items-center justify-center rounded-full hover:bg-black/5"
+                aria-label="검색"
+              >
+                <Search size={20} style={{ color: "var(--new-main-color)" }} />
+              </button>
+            )}
+          </div>
         </div>
       </header>
 
