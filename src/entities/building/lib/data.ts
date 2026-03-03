@@ -13,6 +13,7 @@ export const buildings: Building[] = [
       tablet: { top: "46%", right: "35%" },
       mobile: { top: "30%", right: "41%" },
     },
+    highlight: { top: "18%", left: "52%", width: "18%", height: "55%" },
   },
   {
     id: 2,
@@ -26,6 +27,7 @@ export const buildings: Building[] = [
       tablet: { top: "33%", right: "36%" },
       mobile: { top: "27%", left: "32%" },
     },
+    highlight: { top: "15%", left: "55%", width: "14%", height: "50%" },
   },
   {
     id: 3,
@@ -39,6 +41,7 @@ export const buildings: Building[] = [
       tablet: { top: "41%", right: "20%" },
       mobile: { top: "20%", right: "43%" },
     },
+    highlight: { top: "15%", left: "70%", width: "16%", height: "55%" },
   },
   {
     id: 5,
@@ -52,6 +55,7 @@ export const buildings: Building[] = [
       tablet: { top: "70%", left: "25%" },
       mobile: { top: "55%", left: "80%" },
     },
+    highlight: { top: "40%", left: "15%", width: "18%", height: "55%" },
   },
   {
     id: 6,
@@ -65,6 +69,7 @@ export const buildings: Building[] = [
       tablet: { top: "37%", right: "6%" },
       mobile: { top: "12%", left: "38%" },
     },
+    highlight: { top: "10%", left: "86%", width: "14%", height: "55%" },
   },
   {
     id: 7,
@@ -78,6 +83,7 @@ export const buildings: Building[] = [
       tablet: { top: "28%", left: "10%" },
       mobile: { top: "70%", left: "12%" },
     },
+    highlight: { top: "8%", left: "2%", width: "18%", height: "65%" },
   },
   {
     id: 8,
@@ -91,10 +97,11 @@ export const buildings: Building[] = [
       tablet: { top: "37%", left: "26%" },
       mobile: { top: "60%", left: "14%" },
     },
+    highlight: { top: "18%", left: "20%", width: "15%", height: "48%" },
   },
   {
     id: 9,
-    name: "성미가엘성당/피츠버그홀",
+    name: "성미가엘성당&피츠버그홀",
     slug: "pb_hall",
     icon: "/images/icons/9.png",
     image: "/images/main/pb_hall_alone.png",
@@ -104,6 +111,7 @@ export const buildings: Building[] = [
       tablet: { top: "39%", left: "37%" },
       mobile: { top: "48%", left: "23%" },
     },
+    highlight: { top: "15%", left: "34%", width: "18%", height: "55%" },
   },
   {
     id: 11,
@@ -117,6 +125,7 @@ export const buildings: Building[] = [
       tablet: { top: "30%", right: "20%" },
       mobile: { top: "20%", left: "18%" },
     },
+    highlight: { top: "10%", left: "73%", width: "16%", height: "55%" },
   },
 ];
 
